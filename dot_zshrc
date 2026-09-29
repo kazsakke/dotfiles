@@ -108,6 +108,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export LOCALIZELY_API_TOKEN=8e487295562348528f3dd196bf0f74b6807bf60524504811bdf90b3cef1c7bab
+
 alias bup="brew update"
 alias bou="brew outdated"
 alias bug="brew upgrade"
@@ -294,3 +296,12 @@ gmbh-prod-db-session() {
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Terraform/Terragrunt timeout fix (added 2026-04-01)
+export TF_PLUGIN_TIMEOUT=300
+export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
+mkdir -p "$TF_PLUGIN_CACHE_DIR" 2>/dev/null
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/danielmatefi/.local/bin:$PATH"
