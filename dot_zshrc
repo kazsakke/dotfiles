@@ -108,11 +108,15 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export LOCALIZELY_API_TOKEN=8e487295562348528f3dd196bf0f74b6807bf60524504811bdf90b3cef1c7bab
+# Load local secrets that are not tracked by dotfiles
+if [ -f "$HOME/.zshenv.local" ]; then
+    source "$HOME/.zshenv.local"
+fi
 
 alias bup="brew update"
 alias bou="brew outdated"
 alias bug="brew upgrade"
+alias bugg="brew upgrade --greedy"
 alias bcl="brew cleanup"
 alias bcla="brew cleanup --prune=all"
 
